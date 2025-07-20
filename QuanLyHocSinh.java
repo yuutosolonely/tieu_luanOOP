@@ -17,23 +17,21 @@ public class QuanLyHocSinh implements QuanLy {
         danhSach.removeIf(h -> h.getHoTen().equalsIgnoreCase(ten));
     }
 
-    @Override
+   @Override
     public void suaHocSinh(String ten) {
         for (HocSinh h : danhSach) {
             if (h.getHoTen().equalsIgnoreCase(ten)) {
-                try (Scanner sc = new Scanner(System.in)) {
-                    System.out.print("Nhập điểm toán mới: ");
-                    h.setToan(sc.nextDouble());
-                    System.out.print("Nhập điểm lý mới: ");
-                    h.setLy(sc.nextDouble());
-                    System.out.print("Nhập điểm hóa mới: ");
-                    h.setHoa(sc.nextDouble());
-                }
+                Scanner sc = new Scanner(System.in);
+                h.setToan(Main.nhapDiem(sc, "Toán mới"));
+                h.setLy(Main.nhapDiem(sc, "Lý mới"));
+                h.setHoa(Main.nhapDiem(sc, "Hóa mới"));
+                System.out.println("Đã cập nhật điểm cho học sinh " + ten);
                 return;
             }
         }
         System.out.println("Không tìm thấy học sinh!");
     }
+
 
     @Override
     public HocSinh timTheoTen(String ten) {
