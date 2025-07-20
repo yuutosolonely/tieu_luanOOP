@@ -16,8 +16,9 @@ public class Main {
                 System.out.println("6. Xóa học sinh");
                 System.out.println("7. Đếm số học sinh giỏi");
                 System.out.println("8. Sắp xếp theo điểm TB giảm dần");
-                System.out.println("9. Ghi ra file");
-                System.out.println("10. Đọc từ file");
+                System.out.println("9. Thống kê học lực các học sinh");
+                System.out.println("10. Ghi ra file");
+                System.out.println("11. Đọc từ file");
                 System.out.println("0. Thoát");
                 System.out.print("Chọn chức năng: ");
                 choice = sc.nextInt();
@@ -74,6 +75,9 @@ public class Main {
                         System.out.println("Đã sắp xếp theo điểm trung bình.");
                         break;
                     case 9:
+                        ql.thongke();
+                        break;
+                    case 10:
                         try {
                             ql.ghiFile("output.txt");
                             System.out.println("Đã ghi vào file output.txt");
@@ -81,7 +85,7 @@ public class Main {
                             System.out.println("Lỗi ghi file: " + e.getMessage());
                         }
                         break;
-                    case 10:
+                    case 11:
                         try {
                             ql.docFile("input.txt");
                             System.out.println("Đã đọc từ file input.txt");

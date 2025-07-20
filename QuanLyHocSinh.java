@@ -74,6 +74,35 @@ public class QuanLyHocSinh implements QuanLy {
         }
         return dem;
     }
+    @Override
+    public void thongke()
+    {
+        int tonghs = danhSach.size();
+        int y=0,tb=0,g=0;
+        for (HocSinh h : danhSach)
+            if (h.diemTB() < 5)
+                y++;
+            else if(h.diemTB() >=5 && h.diemTB() <8)
+                tb++;
+            else g++;
+        float tmp;
+        System.out.printf("Hiện đang có tổng cộng %d học sinh \n",tonghs);
+        if(y == 0)
+            tmp = 0;
+        else
+            tmp = ((float)y/tonghs)*100;
+        System.out.printf("Trong đó có %d học sinh yếu, chiếm %.2f phần trăm tổng hs \n",y,tmp);
+        if(tb == 0)
+            tmp = 0;
+        else
+            tmp = ((float)tb/tonghs)*100;
+        System.out.printf("Trong đó có %d học sinh trung bình, chiếm %.2f phần trăm tổng hs \n",tb,tmp);
+        if(g == 0)
+            tmp = 0;
+        else 
+            tmp = ((float)g/tonghs)*100;
+        System.out.printf("Trong đó có %d học sinh giỏi, chiếm %.2f phần trăm tổng hs \n",g,tmp);
+    }
 
     @Override
     public void ghiFile(String tenFile) throws Exception {
