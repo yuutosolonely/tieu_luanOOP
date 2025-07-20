@@ -9,6 +9,7 @@ public interface QuanLy {
     void hienThiTatCa();
     void sapXepTheoDTB();
     int demHocSinhGioi();
+    void thongke();
     void ghiFile(String tenFile) throws Exception;
     void docFile(String tenFile) throws Exception;
 }
